@@ -11,7 +11,6 @@ const CryptoCurrencies = (props) => {
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
 
-
   async function fetchingData() {
     setLoadingState(true);
     setError(null);
@@ -55,7 +54,7 @@ const CryptoCurrencies = (props) => {
   };
 
   return (
-    <div className="p-8">
+    <div className="p-8 max-w-[1300px] mx-auto">
       <Input
         onChange={onSearchHandler}
         value={search}

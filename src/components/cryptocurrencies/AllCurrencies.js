@@ -9,7 +9,7 @@ const ALlCurrencies = (props) => {
   return (
     <Fragment>
       <div className="overflow-x-auto mb-8">
-        <table className="min-w-[700px] mt-8">
+        <table className="min-w-[700px] mx-auto mt-8">
           <thead className="border-solid border-b-[1px] border-grey-400">
             <tr>
               <th className="pl-2 py-4 w-16 text-left">#</th>
