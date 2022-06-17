@@ -21,22 +21,22 @@ const CoinDescription = (props) => {
       console.log(data);
       let mainData = {
         image: data.image.large,
-        name: data.name,
-        rank: data.market_cap_rank,
+        name: data?.name,
+        rank: data?.market_cap_rank,
         desc: data.description.en.split(". ")[0] + ".",
         sourceCode: data.links.repos_url.github[0],
         chat: data.links.chat_url[0],
         site: data.links.homepage[0],
         twitter: data.links.twitter_screen_name,
         announcement: data.links.announcement_url[0],
-        lowtfprc: data.market_data.low_24h.usd.toLocaleString(),
-        hightfprc: data.market_data.high_24h.usd.toLocaleString(),
-        price: data.market_data.current_price.usd.toLocaleString(),
-        prcpertf: data.market_data.price_change_percentage_24h.toFixed(2),
-        market_cap: data.market_data.market_cap.usd.toLocaleString(),
-        total_vol: data.market_data.total_volume.usd.toLocaleString(),
+        lowtfprc: data.market_data.low_24h.usd?.toLocaleString(),
+        hightfprc: data.market_data.high_24h.usd?.toLocaleString(),
+        price: data.market_data.current_price.usd?.toLocaleString(),
+        prcpertf: data.market_data.price_change_percentage_24h?.toFixed(2),
+        market_cap: data.market_data.market_cap.usd?.toLocaleString(),
+        total_vol: data.market_data.total_volume.usd?.toLocaleString(),
         circulating_supply:
-          data.market_data.circulating_supply.toLocaleString(),
+          data.market_data.circulating_supply?.toLocaleString(),
       };
       setCoinData(mainData);
     } catch (error) {

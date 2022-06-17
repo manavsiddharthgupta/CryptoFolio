@@ -1,15 +1,27 @@
 const Coin = (props) => {
-  let priceChangePercentage = props.eachData.price_change_percentage_24h;
-  priceChangePercentage = priceChangePercentage.toFixed(2);
+  let priceChangePercentage = props.eachData?.price_change_percentage_24h;
+  priceChangePercentage = priceChangePercentage?.toFixed(2);
+  if (!priceChangePercentage) {
+    priceChangePercentage = 0;
+  }
 
   let symbol = props.eachData.symbol.toUpperCase();
 
-  let price = props.eachData.current_price.toLocaleString();
+  let price = props.eachData.current_price?.toLocaleString();
+  if (!price) {
+    price = 0;
+  }
 
-  let totalVol = props.eachData.total_volume.toLocaleString();
+  let totalVol = props.eachData.total_volume?.toLocaleString();
+  if (!totalVol) {
+    totalVol = 0;
+  }
 
-  let marktCap = props.eachData.market_cap.toLocaleString();
-
+  let marktCap = props.eachData.market_cap?.toLocaleString();
+  if (!marktCap) {
+    marktCap = 0;
+  }
+  
   function coinDetailHandler() {
     props.onSetOpenModal(props.eachData.id);
     // console.log(props.eachData.id);
@@ -29,13 +41,13 @@ const Coin = (props) => {
             alt="coin_icon"
             className="w-6 h-6 cursor-pointer"
             onClick={coinDetailHandler}
-            src={props.eachData.image}
+            src={props.eachData?.image}
           />
           <span
             className="ml-3 font-medium text-base hover:underline cursor-pointer first-letter:uppercase"
             onClick={coinDetailHandler}
           >
-            {props.eachData.id}
+            {props.eachData?.id}
           </span>
           <span
             className="ml-4 font-medium text-xs text-grey-500 cursor-pointer"
