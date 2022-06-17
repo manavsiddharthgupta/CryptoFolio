@@ -30,7 +30,7 @@ CryptoFolio WebApp built with React is a crypto currency tracking and portfolio 
 ### Installation
 
 ```
-git clone https://github.com/manavsiddharthgupta/Invoice-Generator.git
+git clone https://github.com/manavsiddharthgupta/CryptoFolio.git
 
 npm install
 
