@@ -18,7 +18,6 @@ const CoinDescription = (props) => {
         throw new Error("Some thing Went Wrong");
       }
       let data = await response.json();
-      console.log(data);
       let mainData = {
         image: data.image.large,
         name: data?.name,

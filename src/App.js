@@ -8,7 +8,6 @@ function App() {
   const [modalStatus, setModalStatus] = useState(false);
   const [coinId, setCurrenCoinid] = useState("");
   const [themeLight, setTheme] = useState(true);
-  console.log(themeLight);
 
   const onsetThemeHandler = () => {
     setTheme((status) => !status);
