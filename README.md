@@ -25,6 +25,17 @@ CryptoFolio WebApp built with React is a crypto currency tracking and portfolio 
  - <a href="https://www.npmjs.com/package/react-chartjs-2" >Chart js</a>
  - <a href="https://www.npmjs.com/package/react-loading-skeleton" >React Loading Skleleton</a>
  - <a href="https://www.npmjs.com/package/react-alice-carousel" >React Alice Carouse</a>
+ - <a href="https://v4.mui.com/" >Material ui</a>
+
+### Installation
+
+```
+git clone https://github.com/manavsiddharthgupta/Invoice-Generator.git
+
+npm install
+
+npm start
+```
 
 ### `npm start`
 
