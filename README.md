@@ -30,6 +30,10 @@ CryptoFolio WebApp built with React is a crypto currency tracking and portfolio 
 
 ## To Do
 
+<ul>
+  <li>[ ] login/signup authentication</li>
+  <li>[ ] Watchlist</li>
+</ul>
 
 
 ### Installation
