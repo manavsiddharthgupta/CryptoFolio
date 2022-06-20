@@ -7,7 +7,7 @@ CryptoFolio WebApp built with React is a crypto currency tracking and portfolio 
   - Analyse of each cryptocoins prices and marketcap graph
   - Filter your search
   - Graph contains prices and marketcap data upto a year
-  - Important links like Main website, source code, dicords and blog site is provided for each Crypto Currencies
+  - Important links like Main website, source code, discords and blog site is provided for each Crypto Currencies
   - Dark mode
   - Trending Coins Section
 
