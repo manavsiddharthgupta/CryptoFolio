@@ -13,7 +13,7 @@ function App() {
     setTheme((status) => !status);
   };
 
-  const onCloseModalHandler = (id) => {
+  const onSetModalHandler = (id) => {
     setModalStatus((status) => !status);
     if (!id) {
       setCurrenCoinid("");
@@ -24,16 +24,16 @@ function App() {
   return (
     <div className={`${themeLight === true ? "" : "bg-[#0a1929] text-white"}`}>
       <NavBar themeStatus={themeLight} onSetTheme={onsetThemeHandler} />
-      <Trending themeStatus={themeLight} onsetModal={onCloseModalHandler} />
+      <Trending themeStatus={themeLight} onsetModal={onSetModalHandler} />
       <CryptoCurrencies
         themeStatus={themeLight}
-        onsetModal={onCloseModalHandler}
+        onsetModal={onSetModalHandler}
       />
       {modalStatus && (
         <Modal
           themeStatus={themeLight}
           onCoinId={coinId}
-          onsetModal={onCloseModalHandler}
+          onsetModal={onSetModalHandler}
         />
       )}
     </div>

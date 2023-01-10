@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
+import { Fragment } from "react";
 import { SingleCoin } from "../components/api";
 import CoinChart from "./CoinChart";
 import CurrDesc from "./CurrDesc";
@@ -55,16 +56,24 @@ const CoinDescription = (props) => {
       }`}
     >
       {!error && (
-        <CurrDesc coinDeatiledData={coinData} loadedStatus={isLoaded} />
+        <Fragment>
+          <CurrDesc coinDeatiledData={coinData} loadedStatus={isLoaded} />
+
+          <div className="md:overflow-y-auto md:w-[65%] md:border-l border-grey-600 p-4">
+            <CoinChart
+              themeStatus={props.theme}
+              coinId={props.coinName}
+              loadedStatus={isLoaded}
+              coinDeatiledData={coinData}
+            />
+          </div>
+        </Fragment>
       )}
-      <div className="md:overflow-y-auto md:w-[65%] md:border-l border-grey-600 p-4">
-        <CoinChart
-          themeStatus={props.theme}
-          coinId={props.coinName}
-          loadedStatus={isLoaded}
-          coinDeatiledData={coinData}
-        />
-      </div>
+      {error && (
+        <h1 className="text-center text-red-400 m-auto text-lg">
+          Data Not Available
+        </h1>
+      )}
     </div>
   );
 };
