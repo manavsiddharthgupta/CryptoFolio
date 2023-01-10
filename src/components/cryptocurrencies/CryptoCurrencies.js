@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Input } from "@material-tailwind/react";
 import { CoinList } from "../api";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -11,7 +11,7 @@ const CryptoCurrencies = (props) => {
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
 
-  async function fetchingData() {
+  const fetchingData = useCallback(async () => {
     setLoadingState(true);
     setError(null);
     try {
@@ -22,25 +22,23 @@ const CryptoCurrencies = (props) => {
       }
       let data = await response.json();
       setCryptoCoin(data);
+      // console.log(data);
       setData(data);
     } catch (error) {
       setError(error.message);
     }
     setLoadingState(false);
-  }
+  }, []);
 
   useEffect(() => {
     fetchingData();
-  }, []);
+  }, [fetchingData]);
 
   useEffect(() => {
     let id = setTimeout(() => {
       setCryptoCoin(
         constantData.filter((each) => {
-          return (
-            each.id.toLowerCase().includes(search) ||
-            each.id.toUpperCase().includes(search)
-          );
+          return each.id.includes(search.toLowerCase().trim());
         })
       );
     }, 600);

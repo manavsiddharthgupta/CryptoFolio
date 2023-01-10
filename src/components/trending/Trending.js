@@ -33,6 +33,7 @@ const Trending = (props) => {
       setTrendingStatus(true);
     } catch (error) {
       setError(error.message);
+      setTrendingStatus(true);
     }
   }, []);
 
@@ -44,6 +45,11 @@ const Trending = (props) => {
     <div className="mt-4 shadow-[0_4px_12px_rgba(0,0,0,0.1)] w-[95% max-w-[1200px] mx-auto rounded-md p-6">
       <TrendingHead />
       {!isLoaded && <Skeleton className="h-32 w-full" />}
+      {error && (
+        <p className="text-center text-red-400">
+          NO TRENDING DATA AVAILABLE :(
+        </p>
+      )}
       {isLoaded && !error && (
         <AliceCarousel
           mouseTracking

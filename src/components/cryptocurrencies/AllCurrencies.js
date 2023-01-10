@@ -36,7 +36,7 @@ const ALlCurrencies = (props) => {
           </div>
         )}
         {!props.loadingStatus && props.errorCoin && (
-          <div className="text-center font-medium">
+          <div className="text-center text-red-400 font-medium">
             <p>{props.errorCoin}</p>
           </div>
         )}
