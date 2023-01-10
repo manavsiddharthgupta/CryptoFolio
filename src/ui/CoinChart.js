@@ -1,6 +1,7 @@
 import React, { Fragment, useCallback, useEffect, useState } from "react";
 import { HistoricalChart } from "../components/api";
-// import Chart from "chart.js/auto";
+// eslint-disable-next-line
+import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import Skeleton from "react-loading-skeleton";
 import Tags from "./Tags";
